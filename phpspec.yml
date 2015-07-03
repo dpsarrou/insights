@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Insights
+        psr4_prefix: Insights
+        src_path: app

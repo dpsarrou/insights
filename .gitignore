@@ -1,0 +1,18 @@
+# Ingore environment files
+cgi-bin
+.ftpquota
+.DS_STORE
+.vagrant
+.env
+
+# Ignore IDE files
+.buildpath
+.settings
+.project
+.idea
+
+# Ignore project files/directories
+tmp
+vendor
+node_modules
+
