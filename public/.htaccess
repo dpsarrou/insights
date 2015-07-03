@@ -4,8 +4,9 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteBase /public/
-    # Redirect Trailing Slashes...
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...

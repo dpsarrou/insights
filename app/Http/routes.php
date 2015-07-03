@@ -11,7 +11,11 @@
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
+Route::get('/map', function(){
+    return view('map');
+});
+
+
 Route::get('/', function(){
     return view('index');
 });
