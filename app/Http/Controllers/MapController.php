@@ -22,15 +22,6 @@ class MapController extends Controller {
 	 */
 	public function index()
 	{
-		// here we're going to mock up some data to send them to our front end
-        $data = json_decode($this->map_data_repo->all(), true);
-
-        // this is our applications to vacancies feed
-        $vacancies = $data['data'];
-
-        // then we take the data and select a random vacancy
-        shuffle($vacancies);
-        $vacancy = array_shift($vacancies);
 
         $data = $this->map_data_repo->mock();
 
