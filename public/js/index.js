@@ -22,7 +22,39 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">Stef - Alexandra - Leonard - And Complainer</a> contributors'
 }).addTo(map);
 
-realtime.on('update', function() {
+
+var boxes = document.getElementById("boxes");
+
+realtime.on('update', function(feature) {
+	console.log(feature.features.undefined);
     map.fitBounds(realtime.getBounds(), {maxZoom: 3});
+
+    var application = {
+    	vacancyName: feature.features.undefined.application.vacancy.name,
+    	vacancyUrl: feature.features.undefined.application.vacancy.url,
+    	candidate: feature.features.undefined.application.candidate.name,
+    	department: feature.features.undefined.application.department.name,
+    	timestamp: feature.features.undefined.application.timestamp
+    }
+
+    var li = document.createElement("LI");   
+    var textnode = document.createTextNode("");            
+    boxes.appendChild(li);
+
+    li.innerHTML = createInfoBoxHtml(application);
 });
+
+
+function createInfoBoxHtml(application)
+{
+	return 
+		'<div class="image"><img src="/images/netwerven-logo.png"/></div>'
+		+'<div class="info">'
+		+	'<p class="name"><b>'+ application.candidate +'</b></p>'
+		+	'<p class="vacancy">'+ application.vacancyName+'</p>'
+		+	'<p class="department">'+ application.department+'</p>'
+		+	'<p class="timestamp">'+ application.timestamp+'</p>'
+		+'</div>';
+}
+
 
