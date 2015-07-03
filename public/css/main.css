@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    background: #EEE;
+    padding: 20px 0;
+}
+
+header > h1 {
+    font-size: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+.dynamic-map {
+    width: 75%;
+    min-height: 800px;
+    background: #EEE;
+    float: left;
+}
+
+.map-sidebar {
+    width: 25%;
+    min-height: 800px;
+    background: #CCC;
+    float: left;
+}
