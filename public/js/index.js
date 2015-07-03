@@ -4,7 +4,18 @@ var map = L.map('map'),
         crossOrigin: true,
         type: 'json'
     }, {
-        interval: 3 * 1000
+        interval: 3 * 1000,
+        pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {
+            'icon': L.icon({
+                iconUrl: '/images/netwerven-logo.png',
+                iconSize:     [38, 38], // size of the icon
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            })
+        });
+    }
     }).addTo(map);
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
