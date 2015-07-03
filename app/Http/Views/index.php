@@ -11,6 +11,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="http://local.endouble-insights.com/css/main.css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
 
 </head>
