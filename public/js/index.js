@@ -19,15 +19,19 @@ var map = L.map('map'),
     }).addTo(map);
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">Stef - Alexandra - Leonard - And Complainer</a> contributors'
+    attribution: '&copy; <a href="http://osm.org/copyright">Stef - Alexandra - Leonard - And Complainer (and Frits sucks as always)</a> contributors'
 }).addTo(map);
 
 
 var boxes = document.getElementById("boxes");
 
+
 realtime.on('update', function(feature) {
-	console.log(feature.features.undefined);
     map.fitBounds(realtime.getBounds(), {maxZoom: 3});
+
+
+    var existing_boxes = boxes.innerHTML;
+		
 
     var application = {
     	vacancyName: feature.features.undefined.application.vacancy.name,
@@ -36,25 +40,26 @@ realtime.on('update', function(feature) {
     	department: feature.features.undefined.application.department.name,
     	timestamp: feature.features.undefined.application.timestamp
     }
+           
 
-    var li = document.createElement("LI");   
-    var textnode = document.createTextNode("");            
-    boxes.appendChild(li);
 
-    li.innerHTML = createInfoBoxHtml(application);
+
+    var application_box = '<li class="box">' 
+    			+'<div class="image"><img src="/images/netwerven-logo.png"/></div>'
+				+'<div class="info">'
+				+	'<p class="name"><b>'+ application.candidate +'</b></p>'
+				+	'<p class="vacancy">'+ application.vacancyName+'</p>'
+				+	'<p class="department">'+ application.department+'</p>'
+				+	'<p class="timestamp">'+ application.timestamp+'</p>'
+				+'</div>'
+				+'</li>';
+
+    boxes.innerHTML = application_box + existing_boxes;
+
 });
 
 
-function createInfoBoxHtml(application)
-{
-	return 
-		'<div class="image"><img src="/images/netwerven-logo.png"/></div>'
-		+'<div class="info">'
-		+	'<p class="name"><b>'+ application.candidate +'</b></p>'
-		+	'<p class="vacancy">'+ application.vacancyName+'</p>'
-		+	'<p class="department">'+ application.department+'</p>'
-		+	'<p class="timestamp">'+ application.timestamp+'</p>'
-		+'</div>';
-}
+
+
 
 

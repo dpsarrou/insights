@@ -21,7 +21,18 @@ class MapData extends Model
 
     public static function generateMockData()
     {
-        $random = mt_rand(0, 40);
+   
+        $coordinates = [
+            [52.3702157, 4.895167899999933],
+            [37.983917, 23.729359899999963],
+            [3.751667, 24.870832999999948],
+            [38.4284603, 20.676487700000052],
+            [52.3702157, 4.895167899999933],
+            [-38.416097, -63.616671999999994]
+        ];
+        shuffle($coordinates);
+        $coordinate = [$coordinates[0][1], $coordinates[0][0]];
+
         $candidates = [
             ["name"=>'Stef'],
             ["name"=>'Alexandra'],
@@ -34,6 +45,9 @@ class MapData extends Model
         $departments = [
             ["name"=>'Fish Department'],
             ["name"=>'Foosball design'],
+            ["name"=>'Complains'],
+            ["name"=>'Sales and bullshit bingo'],
+            ["name"=>'Project tyrants'],
         ];
         shuffle($departments);
         $department = $departments[0];
@@ -42,7 +56,7 @@ class MapData extends Model
             ["name"=>'Beer bottle opener', 'url'=>'https://workingatbooking.com/vacancies/perl-developer-2'],
             ["name"=>'Annoyer', 'url'=>'https://workingatbooking.com/vacancies/perl-developer-2'],
             ["name"=>'Event organizer', 'url'=>'https://workingatbooking.com/vacancies/perl-developer-2'],
-            ["name"=>'No-life developer', 'url'=>'https://workingatbooking.com/vacancies/perl-developer-2']
+            ["name"=>'No-life developer', 'url'=>'https://workingatbooking.com/vacancies/perl-developer-2'],
         ];
         shuffle($vacancies);
         $vacancy = $vacancies[0];
@@ -56,7 +70,7 @@ class MapData extends Model
         $data = [
             "geometry"=>[
                 "type"=>"Point",
-                "coordinates"=>[-16.336521490434635 + $random, 48.813858069300295 + $random]
+                "coordinates"=>$coordinate
             ],
             "type"=>"Feature",
             "properties"=>[],

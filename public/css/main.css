@@ -5,6 +5,11 @@ body {
     font-size: 14px;
 }
 
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 header {
     background: #EEE;
     padding: 20px 0;
