@@ -11,6 +11,9 @@
 |
 */
 
+Route::resource('/api/v1/map', 'MapController');
+
+
 Route::get('/map', function(){
     return view('map');
 });

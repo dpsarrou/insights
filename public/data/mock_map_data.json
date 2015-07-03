@@ -1,0 +1,34 @@
+{
+
+  "data":[
+    {
+      "vacancy_name":"Vacancy 1",
+      "vacancy_url":"https://workingatbooking.com/vacancies/perl-developer-2",
+      "timestamp":"",
+      "location":{
+        "lat":"123",
+        "lon":"123"
+      }
+    },
+    {
+      "vacancy_name":"Vacancy 2",
+      "vacancy_url":"https://workingatbooking.com/vacancies/perl-developer-2",
+      "timestamp":"",
+      "location":{
+        "lat":"123",
+        "lon":"123"
+      }
+    },
+    {
+      "vacancy_name":"Vacancy 3",
+      "vacancy_url":"https://workingatbooking.com/vacancies/perl-developer-2",
+      "timestamp":"",
+      "location":{
+        "lat":"123",
+        "lon":"123"
+      }
+    }
+
+  ]
+
+}
