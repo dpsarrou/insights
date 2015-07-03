@@ -45,7 +45,7 @@ realtime.on('update', function(feature) {
 
 
     var application_box = '<li class="box">' 
-    			+'<div class="image"><img src="/images/netwerven-logo.png"/></div>'
+    			+'<div class="image"><img src="/images/' + application.candidate + '.jpg "/></div>'
 				+'<div class="info">'
 				+	'<p class="name"><b>'+ application.candidate +'</b></p>'
 				+	'<p class="vacancy">'+ application.vacancyName+'</p>'
