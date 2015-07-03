@@ -27,7 +27,7 @@
     </section>
 
     <aside class="map-sidebar">
-        <?php // include 'box.php'; ?>
+        <?php include 'partials/box.php'; ?>
     </aside>
 </main>
 
