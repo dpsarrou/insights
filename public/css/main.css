@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-size: 14px;
 }
 
 header {
@@ -29,6 +30,7 @@ header > h1 {
     float: left;
 }
 
+
  #map {
     position: absolute;
     top: 71px;
@@ -36,4 +38,29 @@ header > h1 {
     bottom: 0;
     right: 0;
     width: 75%;
+
+/*Boxes*/
+.box {
+    padding: 10px;
+}
+
+.box img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.image {
+    margin-top: 10px;
+    float: left;
+    width: 30%;
+}
+
+.info {
+    width: 70%;
+    float: left;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.box p {
+    margin: 10px;
 }
