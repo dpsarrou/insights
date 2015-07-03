@@ -7,6 +7,11 @@ var map = L.map('map'),
         interval: 3 * 1000
     }).addTo(map);
 
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">Stef - Alexandra - Leonard - And Complainer</a> contributors'
+}).addTo(map);
+
 realtime.on('update', function() {
     map.fitBounds(realtime.getBounds(), {maxZoom: 3});
 });
+
